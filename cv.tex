@@ -18,21 +18,13 @@
 \quote{Weeks of coding can save you hours of planning}
 
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
-\usepackage{etoolbox}
-
-\makeatletter
-\patchcmd{\makecvtitle} % <cmd>
-{\ifthenelse} % <search>
-{DoB: 12/34/5678\\\ifthenelse} % <replace>
-{}{} % <success><failure>
-\makeatother
 
 \begin{document}
 \makecvtitle
 
 \section{Experience}
 \subsection{Vocational}
-\cventry{2018--Present}{Lead Software Developer}{Evotor}{Moscow}{Cloud Management Department}{
+\cventry{2019--Present}{Lead Software Developer}{Evotor}{Moscow}{Cloud Management Department}{
 Lead the team of three backend developers (including me). The number of microservices has exceeded 30, there are several scripts that automate pre-release processes and testing. Different kinds of tests now automatically run when we create pull requests. We have migrated our services from Java 8 to Java 12 (skipping 11 which is LTS version) and noticed improvements in memory consumption thanks by new GC called G1. We have updated all tools and libraries we use (we migrated to Spring 5.*, Spring Boot 2.*, Junit Jupiter, Gradle 5.* and etc.).\newline Less and less engaged in business tasks and spend a lot of time on technical tasks. To implement kind-of-atomicity when Kafka and PostgreSQL are used, we started to use Debezium and Kafka Connect. The second one was buggy and I implemented our own solution based on Debezium and Zookeeper (to coordinate several application instances between each other). I also have found a problem in Debezium which lead to a problem when PostgreSQL could not shutdown because Debezium would never end replication process. I have implemented a test written in Kotlin, integrated testwith GitHub Actions, reported \href{https://issues.redhat.com/browse/DBZ-1727}{the bug} and lately contributed a fix for it. Step by step integrating multi-module architecture into our projects.
 \begin{itemize}
 \item Languages: Java 12
@@ -49,7 +41,7 @@ Lead the team of three backend developers (including me). The number of microser
 \item Version-Control System: git, gitflow
 \end{itemize}
 }
-\cventry{2017--2018}{Senior Software Developer}{Evotor}{Moscow}{Cloud Management Department}{
+\cventry{2018--2019}{Senior Software Developer}{Evotor}{Moscow}{Cloud Management Department}{
 Migrated services to Kubernetes cluster. Created Kubernetes configurations for test and production environments. Lately migrated configurations to use helm. Made caching optimizations and migrated caching from in-memory to use remote cache (Redis). Fixed some memory problems (using standard Java utils and Eclipse Analyzer to find them) and found memory leaks when Logback was using async appender to write file logs. Added service metrics and alerts using Prometheus and Grafana. Created Jenkins pipelines to automate release process. Helped testers to create a new base for theirs automated tests.\newline
 \begin{itemize}
 \item Languages: Java 8
